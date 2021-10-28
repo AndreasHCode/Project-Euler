@@ -1,0 +1,28 @@
+package solution;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int max = 0;
+
+		for (int i = 1; i < 1_000_000; i++) {
+			int count = 0;
+
+			while (i != 1) {
+				count++;
+
+				if (i % 2 == 0) {
+					i /= 2;
+				} else {
+					i = 3 * i + 1;
+				}
+			}
+
+			if (max < count) {
+				max = count;
+				System.out.println("Current count");
+			}
+		}
+
+	}
+}

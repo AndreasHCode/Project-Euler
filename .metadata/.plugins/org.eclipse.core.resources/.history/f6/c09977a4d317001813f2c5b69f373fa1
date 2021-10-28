@@ -1,0 +1,14 @@
+package solution;
+
+import java.math.BigInteger;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		BigInteger number = new BigInteger("600851475143");
+		
+		
+	}
+	
+}

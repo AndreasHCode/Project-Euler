@@ -1,0 +1,25 @@
+package solution;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		long sum = (long) Math.pow(2, 10) + Math.pow(2, 18) + Math.pow(2, 24)
+				+ Math.pow(2, 28) + Math.pow(2, 30) + 2;
+
+		System.out.println(sum);
+
+	}
+
+	public class Node {
+
+		private String value;
+		private Node left;
+		private Node right;
+
+		public Node(String value) {
+			this.value = value;
+		}
+
+	}
+}

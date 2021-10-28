@@ -1,0 +1,44 @@
+package solution;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	public static void main(String[] args) {
+		boolean searching = true;
+		int number = 1;
+		int triangleNumber = 0;
+		long start = System.currentTimeMillis();
+
+		while (searching) {
+			triangleNumber += number;
+
+			List<Integer> factors = new ArrayList<>();
+
+			int divisors = 0;
+			for (int i = 1; i <= Math.sqrt(triangleNumber); i++) {
+
+				if (triangleNumber % i == 0) {
+					factors.add(i);
+				}
+			}
+
+			if (factors.size() > 47) {
+				System.out.println("Number: " + number + " Triangle: "
+						+ triangleNumber + " SIZE: " + factors.size());
+				System.out.println(factors);
+			}
+
+			if (factors.size() > 500) {
+				System.out.println(factors);
+				searching = false;
+			}
+
+			number++;
+		}
+
+		long stop = System.currentTimeMillis();
+		System.out.println((stop - start) / 1000);
+	}
+}

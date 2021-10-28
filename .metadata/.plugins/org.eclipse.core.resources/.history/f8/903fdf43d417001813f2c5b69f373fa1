@@ -1,0 +1,20 @@
+package solution;
+
+import java.math.BigInteger;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		BigInteger number = new BigInteger("600851475143");
+		
+		for (int i = 0; i < 1000; i++) {
+			BigInteger m = new BigInteger(String.valueOf(i));
+			
+			if (number.mod(new BigInteger("444")) == 0) {
+				
+			}
+		}
+	}
+	
+}

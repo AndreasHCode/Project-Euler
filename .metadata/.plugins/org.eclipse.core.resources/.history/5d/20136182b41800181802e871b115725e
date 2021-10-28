@@ -1,0 +1,23 @@
+package solution;
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		int sum = Math.pow(2, 10) + Math.pow(2, 8) + Math.pow(2, 6)
+				+ Math.pow(2, 4) + Math.pow(2, 2) + 1;
+
+	}
+
+	public class Node {
+
+		private String value;
+		private Node left;
+		private Node right;
+
+		public Node(String value) {
+			this.value = value;
+		}
+
+	}
+}

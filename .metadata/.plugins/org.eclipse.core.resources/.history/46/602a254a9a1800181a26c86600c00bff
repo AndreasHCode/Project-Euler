@@ -1,0 +1,104 @@
+package solution;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+
+	private static List<Integer> primes = new ArrayList<>();
+
+	public static void main(String[] args) {
+		boolean searching = true;
+		int number = 1;
+		int triangleNumber = 1;
+		primes.add(2);
+		primes.add(3);
+		long start = System.currentTimeMillis();
+		long start100 = System.currentTimeMillis();
+
+		while (searching) {
+			triangleNumber += number;
+
+			if (triangleNumber % 32 != 0) {
+				number++;
+				continue;
+			}
+
+			List<Integer> factors = new ArrayList<>();
+			for (int i = primes.get(primes.size() - 1) + 1; i <= triangleNumber / 2; i++) {
+				if (isPrime(i)) {
+					primes.add(i);
+				}
+			}
+
+			factors.add(1);
+			findFactors(triangleNumber, factors, 1, 0);
+			factors.add(triangleNumber);
+
+			// for (int i = 1; i <= triangleNumber; i++) {
+			// if (triangleNumber % i == 0) {
+			// factors.add(i);
+			// }
+			// }
+
+			if (factors.size() > 47) {
+				System.out.println("Number: " + number + " Triangle: "
+						+ triangleNumber + " SIZE: " + factors.size());
+				System.out.println(factors);
+			}
+
+			if (number % 100 == 0) {
+				System.out.println("Time for last 100: "
+						+ (System.currentTimeMillis() - start100));
+				start100 = System.currentTimeMillis();
+			}
+
+			if (factors.size() > 500) {
+				System.out.println(factors);
+				searching = false;
+			}
+
+			number++;
+		}
+
+		long stop = System.currentTimeMillis();
+		System.out.println((stop - start) / 1000);
+	}
+
+	private static void findFactors(int triangleNumber, List<Integer> factors,
+			int factor, int start) {
+		for (Integer aPrime : primes.subList(start, primes.size())) {
+			int primeFactor = aPrime * factor;
+
+			if (primeFactor > triangleNumber / 2) {
+				return;
+			}
+
+			if (isDivisible(triangleNumber, primeFactor)) {
+				factors.add(primeFactor);
+				findFactors(triangleNumber, factors, primeFactor, start);
+			}
+
+			start++;
+		}
+
+	}
+
+	private static boolean isDivisible(int number, int divisor) {
+		return ((int) number / divisor) == ((double) number / divisor);
+	}
+
+	public static boolean isPrime(Integer number) {
+		for (Integer aPrime : primes) {
+			if (aPrime > Math.sqrt(number)) {
+				return true;
+			}
+
+			if (number % aPrime == 0) {
+				return false;
+			}
+		}
+
+		return true;
+	}
+}

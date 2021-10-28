@@ -1,0 +1,30 @@
+package solution;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+	
+	private static List<Integer> primes = new ArrayList<>();
+
+	public static void main(String[] args) {
+		long number = 3L;
+		primes.add(2);
+		
+		while (primes.size() < 10001) {
+			
+			if (isPrime(number)) {
+				primes.add(number);
+			}
+			
+		}
+	}
+
+	private static boolean isPrime(long number) {
+		
+		
+		
+		return false;
+	}
+	
+}

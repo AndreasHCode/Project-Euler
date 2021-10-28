@@ -1,0 +1,24 @@
+package solution;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		boolean searching = true;
+		int number = 0;
+		
+		while (number < 3000) {
+			
+			for (int i = 1; i <= 10; i++) {
+				if (number % i != 0) {
+					if (i == 10)
+					System.out.println("Number: " + number + " not Valid");
+					break;
+				}
+			}
+			
+			number += 10;
+		}
+		
+	}
+
+}

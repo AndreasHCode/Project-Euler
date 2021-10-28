@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract method &apos;private static int getCount(int count, int number)&apos; from &apos;solution.Main.main()&apos; to &apos;solution.Main&apos;&#x0D;&#x0A;- Original project: &apos;Problem 14&apos;&#x0D;&#x0A;- Method name: &apos;getCount&apos;&#x0D;&#x0A;- Destination type: &apos;solution.Main&apos;&#x0D;&#x0A;- Declared visibility: &apos;private&apos;" comments="false" description="Extract method &apos;getCount&apos;" destination="0" exceptions="false" flags="786434" id="org.eclipse.jdt.ui.extract.method" input="/src&lt;solution{Main.java" name="getCount" replace="false" selection="185 154" stamp="1519394676530" version="1.0" visibility="2"/>
+</session>

@@ -1,0 +1,37 @@
+package solution;
+
+public class Main {
+
+	public static void main(String[] args) {
+		int max = 0;
+
+		for (int i = 4; i < 1_000_000; i++) {
+			int count = 0;
+			int number = i;
+
+			while (i > 1) {
+				System.out.println("Before:" + i);
+				count++;
+
+				if (i % 2 == 0) {
+					i = i / 2;
+				} else {
+					i = 3 * i + 1;
+				}
+				System.out.println("After: " + i);
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+
+			if (max < count) {
+				max = count;
+				System.out.println("Current count: " + max + " at: " + i);
+			}
+		}
+
+	}
+}

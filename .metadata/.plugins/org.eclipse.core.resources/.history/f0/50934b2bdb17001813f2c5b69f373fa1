@@ -1,0 +1,58 @@
+package solution;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		int first = 99;
+		int second = first;
+		
+		outerloop:
+		for (int i = 0; i < 99; i++) {
+			second = first;
+			
+			System.out.println("OUTER:");
+			System.out.println("First: " + first);
+			System.out.println("Second: " + second);
+			if (isPalindrome(first-- * second)) {
+				break;
+			}
+			
+			for (int j = i; j < i; j++) {
+
+				System.out.println("INNER:");
+				System.out.println("J: " + j);
+				System.out.println("First: " + first);
+				System.out.println("Second: " + second);
+				
+				if (isPalindrome(first * second--)) {
+					break outerloop;
+				}
+				
+				System.out.println("REDUCING J");
+			}
+		}
+		
+		first = 999;
+		
+	}
+	
+	public static boolean isPalindrome(int number) {
+		System.out.println(number);
+		
+		String numberString = String.valueOf(number);
+		int length = numberString.length();
+		
+		for (int i = 0; i <= length / 2; i++) {
+			if (numberString.charAt(i) == numberString.charAt(length - i - 1)) {
+				System.out.println("SAME: " + number);
+			} else {
+				return false;
+			}
+		}
+
+		System.out.println(numberString);
+		
+		return false;
+	}
+}

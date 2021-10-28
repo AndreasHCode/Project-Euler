@@ -1,0 +1,16 @@
+package solution;
+
+public class Main {
+	
+	private static final int FIBB_LIMIT = 4_000_000;
+
+	public static void main(String[] args) {
+
+		int sum = countFibb(1, 1);
+		
+		
+	}
+	
+	public static int countFibb(int prev, int current);
+	
+}
